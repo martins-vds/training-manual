@@ -4,12 +4,8 @@
 ARG VARIANT="bionic"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
-# [Optional] Uncomment this section to install additional OS packages.
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
-
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends \
-    gettext-base=0.19.8.1-6ubuntu0.3 \
+  && apt-get -y install --no-install-recommends gettext-base=0.19.8.1-6ubuntu0.3 \
   && rm -rf /var/lib/apt/lists/* \
+  && python -m ensurepip --upgrade \
   && pip install --no-cache-dir urllib3==1.26.15
