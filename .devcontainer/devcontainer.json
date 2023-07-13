@@ -6,7 +6,7 @@
     "dockerfile": "Dockerfile",
     // Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
     // Use hirsute or bionic on local arm64/Apple Silicon.
-    "args": { "VARIANT": "bionic" }
+    "args": { "VARIANT": "hirsute" }
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
